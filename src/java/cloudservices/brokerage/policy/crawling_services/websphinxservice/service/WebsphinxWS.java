@@ -4,9 +4,9 @@
  */
 package cloudservices.brokerage.policy.crawling_services.websphinxservice.service;
 
+import cloudservices.brokerage.commons.utils.file_utils.ResourceFileUtil;
+import cloudservices.brokerage.commons.utils.logging.LoggerSetup;
 import cloudservices.brokerage.policy.crawling_services.crawler4jservice.crawler_logic.repository.URLRepositoryService;
-import cloudservices.brokerage.utils.file_utils.ResourceFileUtil;
-import cloudservices.brokerage.utils.logging.LoggerSetup;
 import cloudservices.brokerage.policy.crawling_services.websphinxservice.configuration.WebsphinxConfig;
 import cloudservices.brokerage.policy.crawling_services.websphinxservice.crawler_logic.CrawlerController;
 import java.io.IOException;
