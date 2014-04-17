@@ -35,10 +35,6 @@ public class WebsphinxWS {
 
     @WebMethod(operationName = "crawl")
     public Set<String> crawl(@WebParam(name = "seeds") Set<String> seeds) throws IOException, Exception {
-        seeds=new HashSet<>();
-        seeds.add("http://www.arashkhodadadi.com/");
-        seeds.add("http://www.xmethods.com/ve2/index.po");
-        
         LoggerSetup.setup(ResourceFileUtil.getResourcePath("log.txt"), ResourceFileUtil.getResourcePath("log.html"));
         String[] crawlSeeds = (String[]) seeds.toArray(new String[0]);
         WebsphinxConfig config = new WebsphinxConfig(crawlSeeds);
