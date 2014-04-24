@@ -4,8 +4,8 @@
  */
 package cloudservices.brokerage.policy.crawling_services.websphinxservice.crawler_logic;
 
-import cloudservices.brokerage.policy.crawling_services.crawler4jservice.crawler_logic.repository.URLRepositoryService;
 import cloudservices.brokerage.policy.crawling_services.websphinxservice.configuration.WebsphinxConfig;
+import cloudservices.brokerage.policy.crawling_services.websphinxservice.crawler_logic.repository.URLRepositoryService;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;

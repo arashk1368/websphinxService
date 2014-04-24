@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cloudservices.brokerage.policy.crawling_services.crawler4jservice.crawler_logic.repository;
+package cloudservices.brokerage.policy.crawling_services.websphinxservice.crawler_logic.repository;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -26,5 +26,9 @@ public class URLRepository {
 
     public Set<String> getUrls() {
         return urls;
+    }
+
+    public void clear() {
+        this.urls.clear();
     }
 }

@@ -6,11 +6,10 @@ package cloudservices.brokerage.policy.crawling_services.websphinxservice.servic
 
 import cloudservices.brokerage.commons.utils.file_utils.ResourceFileUtil;
 import cloudservices.brokerage.commons.utils.logging.LoggerSetup;
-import cloudservices.brokerage.policy.crawling_services.crawler4jservice.crawler_logic.repository.URLRepositoryService;
 import cloudservices.brokerage.policy.crawling_services.websphinxservice.configuration.WebsphinxConfig;
 import cloudservices.brokerage.policy.crawling_services.websphinxservice.crawler_logic.CrawlerController;
+import cloudservices.brokerage.policy.crawling_services.websphinxservice.crawler_logic.repository.URLRepositoryService;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +34,7 @@ public class WebsphinxWS {
 
     @WebMethod(operationName = "crawl")
     public Set<String> crawl(@WebParam(name = "seeds") Set<String> seeds) throws IOException, Exception {
+        URLRepositoryService.getInstance().getRepository().clear();
         LoggerSetup.setup(ResourceFileUtil.getResourcePath("log.txt"), ResourceFileUtil.getResourcePath("log.html"));
         String[] crawlSeeds = (String[]) seeds.toArray(new String[0]);
         WebsphinxConfig config = new WebsphinxConfig(crawlSeeds);
