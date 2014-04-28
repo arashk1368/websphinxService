@@ -34,22 +34,23 @@ public class WebsphinxWS {
 
     @WebMethod(operationName = "crawl")
     public Set<String> crawl(@WebParam(name = "seeds") Set<String> seeds) throws IOException, Exception {
-        URLRepositoryService.getInstance().getRepository().clear();
-        LoggerSetup.setup(ResourceFileUtil.getResourcePath("log.txt"), ResourceFileUtil.getResourcePath("log.html"));
-        String[] crawlSeeds = (String[]) seeds.toArray(new String[0]);
-        WebsphinxConfig config = new WebsphinxConfig(crawlSeeds);
-        config.setMaxDepth(1);
-        CrawlerController controller = new CrawlerController(config);
-        long startTime = System.currentTimeMillis();
-        LOGGER.log(Level.INFO, "Crawling Start");
-        controller.start();
-        long endTime = System.currentTimeMillis();
-        long totalTime = endTime - startTime;
-        String msg = "Crawling End in " + totalTime + "ms";
-        LOGGER.log(Level.INFO, msg);
-
-        Set outgoingUrls = URLRepositoryService.getInstance().getRepository().getUrls();
-        outgoingUrls.removeAll(seeds);
-        return outgoingUrls;
+        return seeds;
+//        URLRepositoryService.getInstance().getRepository().clear();
+//        LoggerSetup.setup(ResourceFileUtil.getResourcePath("log.txt"), ResourceFileUtil.getResourcePath("log.html"));
+//        String[] crawlSeeds = (String[]) seeds.toArray(new String[0]);
+//        WebsphinxConfig config = new WebsphinxConfig(crawlSeeds);
+//        config.setMaxDepth(1);
+//        CrawlerController controller = new CrawlerController(config);
+//        long startTime = System.currentTimeMillis();
+//        LOGGER.log(Level.INFO, "Crawling Start");
+//        controller.start();
+//        long endTime = System.currentTimeMillis();
+//        long totalTime = endTime - startTime;
+//        String msg = "Crawling End in " + totalTime + "ms";
+//        LOGGER.log(Level.INFO, msg);
+//
+//        Set outgoingUrls = URLRepositoryService.getInstance().getRepository().getUrls();
+//        outgoingUrls.removeAll(seeds);
+//        return outgoingUrls;
     }
 }
